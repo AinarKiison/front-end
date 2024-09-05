@@ -1,7 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
 
-import {Link, Route, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import Avaleht from './pages/Avaleht';
 import Kinkekaart from './pages/Kinkekaart';
 import Esindused from './pages/Esindused';
@@ -16,7 +16,6 @@ function App() {
     <div className="App">
     <Menyy/>
     
-
       <Routes>
         <Route path="avaleht" element={<Avaleht/>} />
         <Route path="osta-kinkekaart" element={<Kinkekaart/>} />
