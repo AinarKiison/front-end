@@ -28,3 +28,21 @@
 body{
   background-color: gray;
 }
+.summa-aktiivne{
+  border-color: red;
+  border-width: 3px;
+}
+.linn-aktiivne{
+  text-decoration:underline;
+}
+.keel-aktiivne{
+  padding: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  background-color: red;
+}
+.keel{
+  padding: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
