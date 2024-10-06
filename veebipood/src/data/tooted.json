@@ -1,0 +1,8 @@
+[
+    {"nimi": "Desktop", "hind":1111, "aktiivne":true, "keskus":"Ülemiste","pilt":"http//.jpg vms"},
+    {"nimi": "Laptop", "hind":2222, "aktiivne":true, "keskus":"Ülemiste","pilt":"http//.jpg vms"},
+    {"nimi": "Telefon", "hind":3333, "aktiivne":true, "keskus":"Vesse","pilt":"http//.jpg vms"},
+    {"nimi": "Kõlarid", "hind":4444, "aktiivne":true, "keskus":"Kristiine","pilt":"http//.jpg vms"},
+    {"nimi": "Konsoolid", "hind":5555, "aktiivne":true, "keskus":"Ülemiste","pilt":"http//.jpg vms"}
+    
+]

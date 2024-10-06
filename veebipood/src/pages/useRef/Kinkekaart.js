@@ -1,19 +1,75 @@
 import React, {useRef ,useState} from 'react'
+import KontaktAndmed from '../../components/KontaktAndmed';
+import ostukorvJSON from "../../data/ostukorv.json";
 
 function Kinkekaart() {
     const [summa, muudaSumma] = useState(20);
     const [kogus, muudaKogus] = useState(1);
-    const emailRef = useRef();
     const [sonum, muudaSonum] = useState("");
+    const emailRef = useRef();
+    const emailSendRef = useRef();
+    const [ isSend, muudaSend] = useState(false);
+    
 
     // function lisaOstuKorvi(){
     // }
     const lisaOstuKorvi=()=>{
+      if(emailSendRef.current.checked === false){
+        muudaSonum("Kinkekaardid summas " + (summa * kogus) + " € lisatud");
+        ostukorvJSON.push({
+          "nimi": "Kinkekaart",
+          "hind": summa * kogus,
+          "aktiivne": true,
+          "pilt": ".jpg",
+          "keskus":""
+        });
+        return;
+      }
+
+
+
       if (emailRef.current.value.includes("@")=== false) {
         muudaSonum("Email pole õige!!!");
       }else{
         muudaSonum("Kinkekaardid summas " + (summa * kogus) + " € lisatud")
       }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ostukorvJSON.push({
+      "nimi": "Kinkekaart",
+      "hind": summa * kogus,
+      "aktiivne": true,
+      "pilt": ".jpg",
+      "keskus":""
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Siin on checkbox seega .checked
+    const muudaEmailSend = ()=>{
+      muudaSend(emailSendRef.current.checked);
     }
  
   return (
@@ -33,10 +89,19 @@ function Kinkekaart() {
         <br></br>
 
         <div>Kokku: {summa * kogus}€</div>
+        <br />
+        <label htmlFor="emailSend">Saada e-mailile</label>
+        <input id="emailSend" onClick={muudaEmailSend} ref={emailSendRef} type="checkbox" />
+        <br /><br />
         <div>{sonum}</div>
-        <label>Email</label> <br></br>
-        <input ref={emailRef} type="text" /><br />
-        <button onClick={lisaOstuKorvi}>Lisa ostukorvi</button>
+        {isSend === true &&<>
+          <label>Email</label> <br></br>
+          <input ref={emailRef} type="text" /><br />
+        </>}
+        <button onClick={lisaOstuKorvi}>Lisa ostukorvi</button><br /><br />
+
+        <KontaktAndmed/>
+
     </div>
   )
 }
