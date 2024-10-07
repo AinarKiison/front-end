@@ -116,7 +116,7 @@ function Esindused() {
     
       <br />
       {keskused.map((keskus, index) => 
-        <div>
+        <div key={index}>
           {keskus.nimi} <br />
           {keskus.tel} <br />
           {keskus.aadr} <br />

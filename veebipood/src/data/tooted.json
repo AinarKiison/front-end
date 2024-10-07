@@ -1,8 +1,8 @@
 [
-    {"nimi": "Desktop", "hind":1111, "aktiivne":true, "keskus":"Ülemiste","pilt":"http//.jpg vms"},
-    {"nimi": "Laptop", "hind":2222, "aktiivne":true, "keskus":"Ülemiste","pilt":"http//.jpg vms"},
-    {"nimi": "Telefon", "hind":3333, "aktiivne":true, "keskus":"Vesse","pilt":"http//.jpg vms"},
-    {"nimi": "Kõlarid", "hind":4444, "aktiivne":true, "keskus":"Kristiine","pilt":"http//.jpg vms"},
-    {"nimi": "Konsoolid", "hind":5555, "aktiivne":true, "keskus":"Ülemiste","pilt":"http//.jpg vms"}
+    {"nimi": "Desktop", "hind":1111, "aktiivne":true, "keskus":"Ülemiste","pilt":"https://cdn.pixabay.com/photo/2023/10/10/06/41/perfume-8305508_1280.jpg"},
+    {"nimi": "Laptop", "hind":2222, "aktiivne":false, "keskus":"Ülemiste","pilt":"https://cdn.pixabay.com/photo/2022/12/16/16/15/leaves-7660079_1280.jpg"},
+    {"nimi": "Telefon", "hind":3333, "aktiivne":true, "keskus":"Vesse","pilt":"https://cdn.pixabay.com/photo/2023/10/10/06/41/perfume-8305508_1280.jpg"},
+    {"nimi": "Kõlarid", "hind":4444, "aktiivne":true, "keskus":"Kristiine","pilt":"https://cdn.pixabay.com/photo/2022/12/16/16/15/leaves-7660079_1280.jpg"},
+    {"nimi": "Konsoolid", "hind":5555, "aktiivne":true, "keskus":"Ülemiste","pilt":"https://cdn.pixabay.com/photo/2023/10/10/06/41/perfume-8305508_1280.jpg"}
     
 ]

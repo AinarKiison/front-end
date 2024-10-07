@@ -14,7 +14,7 @@ import Avaleht from './pages/useState/Avaleht';
 import Seaded from './pages/useState/Seaded';
 import NotFound from './pages/useState/NotFound';
 
-import Menyy from './components/Menyy';
+// import Menyy from './components/Menyy';
 
 import Esindused from './pages/arrays/Esindused';
 import Ostukorv from './pages/arrays/Ostukorv';
@@ -36,11 +36,16 @@ import MuudaToode from './pages/muuda/MuudaToode';
 import { ContactUs } from './pages/useRef/ContactUs';
 import Admin from './pages/useState/Admin';
 import Shops from './pages/useState/Shops';
+import Menu from './components/Menu';
+
+
 
 function App() {
   return (
     <div className="App">
-    <Menyy/>
+
+   <Menu></Menu>
+    {/* <Menyy/> */}
     
       <Routes>
         <Route path="" element={ <Navigate to= "/avaleht" /> } />
@@ -68,7 +73,7 @@ function App() {
         <Route path="esindus/:index" element={<YksEsindus/>} />
         <Route path="hind/:index" element={<YksHind/>} />
         <Route path="tootaja/:index" element={<YksTootaja/>} />
-        <Route path="toode/:index" element={<YksToode/>} />
+        <Route path="toode/:tooteNimi" element={<YksToode/>} />
 
         <Route path="muuda-esindus/:index" element={<MuudaEsindus/>} />
         <Route path="muuda-hind/:index" element={<MuudaHind/>} />

@@ -43,7 +43,7 @@ const arvutaKokku =()=>{
     <div>
       <br/>
         {tooted.map((toode, index) => 
-          <div>
+          <div key={index}>
             {tooted.length > 0 && <button onClick={tyhjenda}>{t("empty")}</button>}
 
             {tooted.length > 0 && <div>Tooteid kokku ostukorvis: {tooted.length} Tükki </div>}

@@ -42,7 +42,7 @@ function HaldaTootajad() {
       <br /><br /> */}
       <br />
       {tootajad.map((tootaja, index) => 
-      <div>
+      <div key={index}>
         <div>{tootaja.nimi}</div>
         <div>{tootaja.tel}</div>
         <div>{tootaja.amet}</div>

@@ -20,9 +20,14 @@
 .pilt:active{
   transform: scale(90%);
 }
+.pilt-mitteaktiivne{
+  height: 50px;
+  filter: grayscale(100%);
+  opacity: 0.5;
+}
 .pilt{
-  width: 300px;
-  height: 300px;
+  width: 75px;
+  height: 75px;
   border-radius: 5%;
 }
 body{
@@ -50,4 +55,13 @@ body{
   height: 350px;
   margin: 3%;
   border-radius: 10px;
+}
+td, th{
+  border:1px solid black;
+}
+th{
+  background-color: orange;
+}
+table{
+  margin:auto;
 }

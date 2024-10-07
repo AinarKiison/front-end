@@ -90,7 +90,7 @@ return (
 
 {tootajad.map((tootaja, index) => 
 
-<div> 
+<div key={index}> 
   {tootaja.nimi}:
   <br />
   {tootaja.tel}:

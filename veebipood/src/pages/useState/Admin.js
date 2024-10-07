@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next';
+import Button from 'react-bootstrap/Button';
+
 
 function Admin() {
     const { t } = useTranslation();
@@ -8,7 +10,18 @@ function Admin() {
 
   return (
     <div>
-      <Link to="/halda-esindused">
+
+      <Button as={Link} to ="/halda-esindused" variant="primary">{t("maintain-shops")}</Button>{' '}
+      <Button as={Link} to ="/halda-hinnad" variant="secondary">Halda Hinnad</Button>{' '}
+      <Button as={Link} to ="/lisa-toode" variant="success">Lisa Toode</Button>{' '}
+      <Button as={Link} to ="/halda-tooted" variant="warning">Halda Tooted</Button>{' '}
+      <Button as={Link} to ="/halda-tootajad" variant="info">Halda Töötajad</Button>{' '}
+      
+   
+      {/* <Button variant="info">Info</Button>{' '} */}
+
+
+      {/* <Link to="/halda-esindused">
         <button className="nupp">{t("maintain-shops")}</button>
       </Link>
       <Link to="/halda-hinnad">
@@ -22,7 +35,7 @@ function Admin() {
       </Link>
       <Link to="/lisa-toode">
         <button className="nupp">Lisa toode</button>
-      </Link>
+      </Link> */}
 
     </div>
   )

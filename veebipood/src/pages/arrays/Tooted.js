@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import tootedJSON from "../../data/tooted.json";
 import ostukorvJSON from "../../data/ostukorv.json";
 
+import Button from '@mui/material/Button';
+
 // sorteeriAZ -> tehtud
 // sorteeriZA -> tegemata
 
@@ -54,31 +56,35 @@ const lisaOstukorvi =(lisatudToode)=>{
 
 return (
     <div><br />
+
+
+<Button onClick={reset} variant="outlined">Reset</Button>
    
-      <button onClick={reset}>Reset</button>
+      
       <br /><br />
-      <button onClick={sorteeriKasvavalt}>Sorteeri A - Z</button>
+      <Button onClick={sorteeriKasvavalt} variant="contained">Sorteeri A - Z</Button>
       <br />
-      <button onClick={sorteeriTahedKahanevalt}>Sorteeri tähed kahanevalt</button>
+      <Button onClick={sorteeriTahedKahanevalt}  variant="text">Sorteeri tähed kahanevalt</Button>
       <br />
-      <button onClick={filtreeriAlgabK}>Filtreeri algab K</button>
+      <Button onClick={filtreeriAlgabK} variant="contained">Filtreeri algab K</Button>
       <br />
-      <button onClick={filtreeriAlgabD}>Filtreeri algab D</button>
+      <Button onClick={filtreeriAlgabD}  variant="text">Filtreeri algab D</Button>
       <br />
-      <button onClick={filtreeriAlgabL}>Filtreeri algab L</button>
+      <Button onClick={filtreeriAlgabL} variant="contained">Filtreeri algab L</Button>
       <br /><br />
       
 
-    
+    {/* !!!!!!!!!!!!!!! */}
 {/* Vaja veel Teha Tähtede kokkuarvutus */}
 
       {tooted.map((toode, index) => 
-      <div>
-      {toode.nimi} - {toode.hind}€
-      <Link to={"/toode/" +  index}>
-        <button>VT lähemalt</button> 
+      <div key={index}>
+      <img className={toode.aktiivne === true ? 'pilt':"pilt-mitteaktiivne"} src={toode.pilt} alt="pilt" />
+      {toode.nimi} - {toode.hind}€  
+      <Link to={"/toode/" +  toode.nimi}>
+        <Button variant="outlined">VT lähemalt</Button> 
       </Link>
-      <button onClick={()=> lisaOstukorvi(toode)}>Lisa ostuKorvi!</button>
+      {toode.aktiivne === true && <Button onClick={()=> lisaOstukorvi(toode)} >Lisa ostuKorvi</Button>}
       </div>
       )}
     </div>
