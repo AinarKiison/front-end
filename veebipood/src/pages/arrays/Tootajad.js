@@ -1,12 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState,useRef } from 'react'
+import tootajadJSON from "../../data/tootajad.json"
 import { Link } from 'react-router-dom';
 
-function Tootajad() {
-const [tootajad, muudaTootajad] = useState(["Theodora", "Ainar", "Berit", "Caspar","Ainar", "Berit", "Caspar"]);
 
-const reset = ()=>{
-  muudaTootajad(["Theodora","Ainar", "Berit", "Caspar","Ainar", "Berit", "Caspar"])
-}
+
+function Tootajad() {
+  
+  const [tootajad, muudaTootajad] = useState(tootajadJSON.slice())
+  //!
+  const otsinguRef = useRef();
+
+  const reset = ()=>{
+    muudaTootajad(tootajadJSON.slice())
+  }
 
 const sorteeriKasvavalt =()=>{
   tootajad.sort((a,b)=> a.localeCompare(b));
@@ -44,6 +50,10 @@ const filtreeriAlgabM = ()=>{
 const sorteeriPaarisarvTahti = () => {
   const vastus = tootajad.filter((tootaja) => tootaja.length % 2 === 0); 
   muudaTootajad(vastus);
+}
+const otsing = () => {
+  const vastus = tootajadJSON.filter(tootaja => tootaja.nimi.includes(otsinguRef.current.value) );
+  muudaTootajad(vastus);
 };
 
 
@@ -52,6 +62,7 @@ return (
     <div><br />
    
     <br />
+    <input ref={otsinguRef} onChange={otsing} type="text" />
       <button onClick={reset}>Reset</button>
       <br /><br />
       <button onClick={sorteeriKasvavalt}>Sorteeri A - Z</button>
@@ -77,13 +88,25 @@ return (
 {/* Otsing vaja teha ja tähtede kokkuarvutus */}
 
 
-      {tootajad.map((tootaja, index)=> 
-        <div>
-          {tootaja}
-          <Link to={"/tootaja/" + index}>
-            <button>Töötaja detailid</button> 
+{tootajad.map((tootaja, index) => 
+
+<div> 
+  {tootaja.nimi}:
+  <br />
+  {tootaja.tel}:
+  <br />
+  {tootaja.amet}: 
+  <br />
+  {tootaja.email}:
+  <br />
+
+<Link to={"/tootaja/" + index}>
+  <button>{tootaja.nimi}</button>
+</Link>
+
+
             
-          </Link> 
+          
         </div>)}
     </div>
   )

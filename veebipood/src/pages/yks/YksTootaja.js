@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import tootajadFailist from "../../data/tootajad.json";
+import tootajadJSON from "../../data/tootajad.json";
 
 //Kodus 30.09
 //HaldaTootajad.js kustutamine + lisamine. faili tyõstmised.otsing
@@ -29,17 +29,18 @@ import tootajadFailist from "../../data/tootajad.json";
 
 function YksTootaja() {
   const {index} = useParams();
-  const leitud = tootajadFailist[index];
-
-  return (
-    <div>
-      <div>Töötaja ID: {index}</div>
-      <div>Töötaja nimi: {leitud}</div>
-      <div>Töötaja tel: </div>
-      <div>Töötaja aadress: </div>
-      {false && <div>Töötaja on vallandatud</div>}
-    </div>
-  )
-}
-
-export default YksTootaja
+  const leitud = tootajadJSON[index];
+    return (
+      <div>
+        <div>ID: {index} </div>
+        <div>Töötaja nimi: {leitud.nimi} </div>
+        <div>Töötaja telefon: {leitud.tel}</div>
+        <div>Töötaja amet: {leitud.amet}</div>
+        <div>Töötaja email: {leitud.email}</div>
+        {leitud.aktiivne === false && <div>Töötaja vallandatud </div>}
+      </div>
+    ) 
+  }
+  
+  
+  export default YksTootaja

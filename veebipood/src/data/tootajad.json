@@ -1,1 +1,8 @@
-["Theodora","Ainar", "Berit", "Caspar","Ainar", "Berit", "Caspar"]
+[
+    {"nimi": "Ainar", "tel": 372111222, "amet": "Projektijuht", "email":"ainar@development.ee"},
+    {"nimi": "Aimar", "tel": 372222333, "amet": "Disainer", "email":"aimar@development.ee"},
+    {"nimi": "Aivar", "tel": 372444555, "amet": "Arendaja", "email":"aivar@development.ee"},
+    {"nimi": "Einar", "tel": 372666777, "amet": "Kasutajaliides", "email":"Einar@development.ee"},
+    {"nimi": "Aivart", "tel": 372777888, "amet": "Direktor", "email":"aivart@development.ee"}
+    
+    ]
